@@ -70,7 +70,7 @@ async function starts() {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `Olá @${num.split('@')[0]}\nBem vindo ao grupo *${mdata.subject}*\nPor favor não seja um ghost 👻\n\n✋ Hey @${num.split('@')[0]} temos umas regras no grupo.\n1° Respeitar a todos.\n2° Sem LINK/IP.\n3°\nSem pornografia FOTOS/VÍDEOS/Marketing\n4° Sem xingamentos ofensivos.\n5° Sem Flood, Spam ou Figurinha (5 mensagem)\n6° Assunto sobre Sexualidade/Cor = BAN\n\n• Equipe BlazeHosting`
+				teks = `Olá @${num.split('@')[0]}\nBem vindo ao grupo *${mdata.subject}*\nPor favor não seja +1 ghost 👻\n\n✋ Hey @${num.split('@')[0]} temos umas regras no grupo.\n1° Respeitar a todos.\n2° Sem LINK/IP.\n3° Sem pornografia FOTOS/VÍDEOS/Marketing\n4° Sem xingamentos ofensivos.\n5° Sem Flood, Spam ou Figurinha (5 mensagem)\n6° Assunto sobre Sexualidade/Cor = BAN\n\n• Equipe BlazeHosting`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
@@ -172,10 +172,12 @@ async function starts() {
 			switch(command) {
 				case 'help':
 				case 'menu':
+					if (!isGroupAdmins) return reply(mess.only.admin)
 					client.sendMessage(from, help(prefix), text)
 					break
 					case 'helps':
-				case 'menu1ls':
+				    case 'menu1ls':
+					if (!isGroupAdmins) return reply(mess.only.admin)
 					client.sendMessage(from, help1(prefix), text)
 					break
 				case 'infto':
@@ -213,7 +215,6 @@ async function starts() {
 					break
 				case 'stiker':
 				case 'sticker':
-					if (!isGroupAdmins) return reply(mess.only.admin)
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await client.downloadAndSaveMediaMessage(encmedia)
@@ -703,7 +704,6 @@ async function starts() {
                                         }
                                         break
 				case 'imagem':
-					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isQuotedSticker) return reply('❌ responder sticker hum ❌')
 					reply(mess.wait)
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
