@@ -19,19 +19,19 @@ const help = (prefix) => {
 ╠➣ DESC: Banir membros do grupo
 ╠➣ USO: ${prefix}banir @tag do membro
 ╠➣ NOTA: O bot precisa ser um admin!
-║➣ OBS: Não faça o bot remover duas pessoas ao mesmo tempo!\n
+║➣ OBS: Não faça o bot remover duas pessoas ao mesmo tempo!
 ║
 ╠➣ COMANDO: ${prefix}promover
 ╠➣ DESC: Promove um membro a ser admin
 ╠➣ USO: ${prefix}promover @tag do membro
 ╠➣ NOTA: O bot precisa ser um admin!
-║➣ OBS: Não faça o bot promover duas pessoas ao mesmo tempo!\n
+║➣ OBS: Não faça o bot promover duas pessoas ao mesmo tempo!
 ║
 ╠➣ COMANDO: ${prefix}rebaixar
 ╠➣ DESC: Promove um admin a ser membro comum
 ╠➣ USO: ${prefix}rebaixar @tag do admin
 ╠➣ NOTA: O bot precisa ser um admin!
-║➣ OBS: Não faça o bot rebaixar duas pessoas ao mesmo tempo!\n
+║➣ OBS: Não faça o bot rebaixar duas pessoas ao mesmo tempo!
 ║
 ╠➣ COMANDO: ${prefix}link
 ╠➣ DESC: Obtenha o link do grupo
@@ -42,14 +42,6 @@ const help = (prefix) => {
 ╠➣ DESC: Marque todos os membros do grupo
 ╠➣ USO: Apenas envie o comando
 ╠➣ NOTA: Você precisa ser um admin!
-║
-╠➣ COMANDO: ${prefix}regras
-╠➣ DESC: Veja as regras do grupo!
-╠➣ USO: Apenas envie o comando
-║
-╠➣ COMANDO: ${prefix}info
-╠➣ DESC: Veja as informações sobre a Hosting
-╠➣ USO: Apenas envie o comando
 ║
 ╠════════════════════
                    • *Equipe BlazeHosting*
